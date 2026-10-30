@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmos Nearby - Educational Astronomy Lecture Hall</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+spaceDark: '#0b0f19',
+spaceCard: '#151b2b',
+spaceAccent: '#6366f1',
+spaceGlow: '#818cf8',
+}
+}
+}
+}
+</script>
+<style>
+/* Custom styles respecting relative units and smooth transitions */
+body {
+font-size: 1rem;
+line-height: 1.6;
+}
+</style>
+</head>
+<body class="bg-spaceDark text-slate-100 font-sans antialiased selection:bg-spaceAccent selection:text-white">
+<!-- Header / Nav Component -->
+<header class="sticky top-0 z-50 bg-spaceDark/90 backdrop-blur-md border-b border-slate-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<span class="text-2xl font-bold tracking-wider bg-gradient-to-r from-spaceGlow to-indigo-400 bg-clip-text text-transparent">
+Cosmos Nearby
+</span>
+</div>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center space-x-8">
+<a href="#playbill" class="text-slate-300 hover:text-spaceGlow transition-colors text-sm font-medium">Playbill</a>
+<a href="#speakers" class="text-slate-300 hover:text-spaceGlow transition-colors text-sm font-medium">Speakers</a>
+<a href="#podcasts" class="text-slate-300 hover:text-spaceGlow transition-colors text-sm font-medium">Podcasts</a>
+<a href="#register" class="bg-spaceAccent hover:bg-indigo-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold shadow-lg shadow-indigo-500/30 transition-all transform hover:scale-105 active:scale-95">
+Buy a Ticket
+</a>
+</nav>
+<!-- Mobile Burger Toggle Button -->
+<button id="menu-btn" class="md:hidden text-slate-300 focus:outline-none p-2" aria-label="Toggle navigation menu">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+</svg>
+</button>
+</div>
+<!-- Mobile Navigation Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-spaceCard border-b border-slate-800 px-4 pt-4 pb-6 space-y-4">
+<a href="#playbill" class="block text-slate-300 hover:text-spaceGlow text-base font-medium">Playbill</a>
+<a href="#speakers" class="block text-slate-300 hover:text-spaceGlow text-base font-medium">Speakers</a>
+<a href="#podcasts" class="block text-slate-300 hover:text-spaceGlow text-base font-medium">Podcasts</a>
+<a href="#register" class="block text-center w-full bg-spaceAccent text-white py-3 rounded-xl font-semibold shadow-md">
+Buy a Ticket
+</a>
+</div>
+</header>
+<main>
+<!-- Hero Section Component -->
+<section class="relative min-h-[90vh] flex items-center justify-center bg-cover bg-center px-4" style="background-image: linear-gradient(to bottom, rgba(11, 15, 25, 0.7), rgba(11, 15, 25, 0.95)), url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920&auto=format&fit=crop');">
+<div class="max-w-4xl mx-auto text-center space-y-8 z-10">
+<span class="inline-block px-4 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-spaceGlow text-xs sm:text-sm font-semibold tracking-wide uppercase">
+Educational Astronomy Lecture Hall
+</span>
+<h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+Simply About the Structure of the Universe
+</h1>
+<p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
+Explore black holes, distant galaxies, and cosmic evolution through interactive lectures delivered by leading astrophysicists.
+</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#playbill" class="bg-spaceAccent hover:bg-indigo-600 text-white px-8 py-4 rounded-full font-bold text-base shadow-lg shadow-indigo-500/40 transition-all transform hover:-translate-y-0.5">
+View Event Schedule
+</a>
+<a href="#register" class="bg-slate-800/80 hover:bg-slate-800 border border-slate-700 text-slate-200 px-8 py-4 rounded-full font-bold text-base transition-all">
+Join Online Broadcast
+</a>
+</div>
+</div>
+</section>
+<!-- Grid Section Component -->
+<section id="playbill" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+<h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">Upcoming Lecture Playbill</h2>
+<p class="text-slate-400 text-base sm:text-lg">Modular schedule of scientific lectures and open sessions.</p>
+</div>
+<!-- CSS Grid Multi-column Matrix (Responsive: 1 col mobile, 3 cols desktop) -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Lecture Card 1 -->
+<article class="bg-spaceCard border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all shadow-xl">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-indigo-500/10 text-spaceGlow rounded-full text-xs font-semibold">Nov 15, 19:00</span>
+<span class="inline-flex items-center text-emerald-400 text-xs font-medium space-x-1">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Seats Available</span>
+</span>
+</div>
+<h3 class="text-xl font-bold text-white">The Anatomy of Supermassive Black Holes</h3>
+<p class="text-slate-400 text-sm">Deep dive into event horizons, gravitational lensing, and recent galactic imagery data.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400">Speaker</p>
+<p class="text-sm font-semibold text-slate-200">Dr. Sarah Jenkins (PhD)</p>
+</div>
+<a href="#register" class="text-xs font-bold bg-slate-800 hover:bg-spaceAccent text-slate-200 hover:text-white px-4 py-2 rounded-lg transition-colors">
+Book Seat
+</a>
+</div>
+</article>
+<!-- Lecture Card 2 -->
+<article class="bg-spaceCard border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all shadow-xl">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-indigo-500/10 text-spaceGlow rounded-full text-xs font-semibold">Nov 22, 18:30</span>
+<span class="inline-flex items-center text-amber-400 text-xs font-medium space-x-1">
+<span class="w-2 h-2 rounded-full bg-amber-400"></span>
+<span>Few Seats Left</span>
+</span>
+</div>
+<h3 class="text-xl font-bold text-white">Origins of the Cosmic Microwave Background</h3>
+<p class="text-slate-400 text-sm">Tracing the echoes of the Big Bang and mapping primordial temperature fluctuations.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400">Speaker</p>
+<p class="text-sm font-semibold text-slate-200">Prof. Alan Turing (ScD)</p>
+</div>
+<a href="#register" class="text-xs font-bold bg-slate-800 hover:bg-spaceAccent text-slate-200 hover:text-white px-4 py-2 rounded-lg transition-colors">
+Book Seat
+</a>
+</div>
+</article>
+<!-- Lecture Card 3 -->
+<article class="bg-spaceCard border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-indigo-500/50 transition-all shadow-xl">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<span class="px-3 py-1 bg-indigo-500/10 text-spaceGlow rounded-full text-xs font-semibold">Dec 01, 20:00</span>
+<span class="inline-flex items-center text-emerald-400 text-xs font-medium space-x-1">
+<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span>Seats Available</span>
+</span>
+</div>
+<h3 class="text-xl font-bold text-white">Exoplanets and Habitable Zones</h3>
+<p class="text-slate-400 text-sm">Methods of detecting Earth-like worlds and analyzing atmospheric spectra.</p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-between">
+<div>
+<p class="text-xs text-slate-400">Speaker</p>
+<p class="text-sm font-semibold text-slate-200">Dr. Elena Rostova (PhD)</p>
+</div>
+<a href="#register" class="text-xs font-bold bg-slate-800 hover:bg-spaceAccent text-slate-200 hover:text-white px-4 py-2 rounded-lg transition-colors">
+Book Seat
+</a>
+</div>
+</article>
+</div>
+</section>
+<!-- Speakers & Podcasts anchor sections (simplified for completeness) -->
+<div id="speakers" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="text-2xl font-bold text-white mb-6">Featured Speakers</h3>
+<p class="text-slate-400">Our lectures are hosted by world-renowned astronomers, astrophysicists, and science communicators dedicated to making space accessible to all.</p>
+</div>
+<div id="podcasts" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h3 class="text-2xl font-bold text-white mb-6">Latest Cosmic Podcasts</h3>
+<p class="text-slate-400">Catch up on audio sessions and Q&A recordings from previous live lecture gatherings.</p>
+</div>
+<!-- Feedback Form Component -->
+<section id="register" class="py-24 bg-gradient-to-b from-transparent to-spaceCard/50 border-t border-slate-800">
+<div class="max-w-xl mx-auto px-4 sm:px-6">
+<div class="bg-spaceCard border border-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl">
+<div class="text-center mb-8 space-y-2">
+<h2 class="text-2xl sm:text-3xl font-bold text-white">Online Broadcast Registration</h2>
+<p class="text-slate-400 text-sm">Sign up to receive access links and reminders for our live open lectures.</p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault(); alert('Registration successful! Check your email for details.');">
+<div>
+<label for="name" class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+<input type="text" id="name" name="name" required placeholder="Құттыбай Санжар" class="w-full bg-spaceDark border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-spaceAccent transition-colors">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address</label>
+<input type="email" id="email" name="email" required placeholder="sanzhar@example.com" class="w-full bg-spaceDark border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-spaceAccent transition-colors">
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number (Optional)</label>
+<input type="tel" id="phone" name="phone" placeholder="+7 (700) 000-00-00" class="w-full bg-spaceDark border border-slate-700 rounded-xl px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-spaceAccent transition-colors">
+</div>
+<button type="submit" class="w-full bg-spaceAccent hover:bg-indigo-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-indigo-500/30 transition-all">
+Complete Registration
+</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-spaceDark border-t border-slate-800 pt-16 pb-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div class="space-y-4">
+<span class="text-xl font-bold text-white">Cosmos Nearby</span>
+<p class="text-slate-400 text-sm">Popular science educational project connecting enthusiasts with the mysteries of the universe.</p>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Partner Observatories</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="#" class="hover:text-spaceGlow transition-colors">National Astrophysical Lab</a></li>
+<li><a href="#" class="hover:text-spaceGlow transition-colors">Tian Shan Astronomical Observatory</a></li>
+<li><a href="#" class="hover:text-spaceGlow transition-colors">Stellar Horizons Foundation</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">Social Media</h4>
+<ul class="space-y-2 text-sm text-slate-400">
+<li><a href="#" class="hover:text-spaceGlow transition-colors">Telegram Channel</a></li>
+<li><a href="#" class="hover:text-spaceGlow transition-colors">YouTube Lectures</a></li>
+<li><a href="#" class="hover:text-spaceGlow transition-colors">Instagram Community</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-4">System Settings</h4>
+<div class="flex items-center space-x-3 bg-spaceCard border border-slate-800 p-3 rounded-xl">
+<span class="text-xs text-slate-300 font-medium">Theme Mode:</span>
+<span class="text-xs font-bold text-indigo-400 px-2.5 py-1 bg-indigo-500/10 rounded-lg">Cosmic Dark (Default)</span>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500">
+© 2026 Cosmos Nearby Educational Project. All rights reserved. Prepared for ICT6001.
+</div>
+</footer>
+<!-- Mobile Menu Toggle Script -->
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+</script>
+</body>
+</html>
